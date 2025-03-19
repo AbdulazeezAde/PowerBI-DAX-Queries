@@ -1,0 +1,13 @@
+MoM_Sales_Growth = 
+VAR 
+    Prev = 
+CALCULATE(
+    [TotalSales],
+    DATEADD(
+        'Date'[Date],
+        -1,
+        MONTH
+    )
+)
+RETURN
+    DIVIDE(([TotalSales] - Prev), Prev)
