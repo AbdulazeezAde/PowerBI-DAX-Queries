@@ -1,0 +1,7 @@
+MoM_Sales = 
+VAR 
+    Prev = IF(NOT(ISBLANK([TotalSales])),
+                CALCULATE([TotalSales], PREVIOUSMONTH('Date'[Date]))
+                )
+RETURN
+    DIVIDE(([TotalSales] - Prev), Prev)
