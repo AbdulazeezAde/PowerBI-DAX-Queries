@@ -2,9 +2,9 @@
 CALCULATE(
     [Total Revenue],
     DATESINPERIOD(
-        'Calendar Lookup'[Date],
+        'Date'[Date],
         MAX(
-            'Calendar Lookup'[Date]
+            'Date'[Date]
         ),
         -10,
         DAY
