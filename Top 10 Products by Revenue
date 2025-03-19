@@ -1,0 +1,11 @@
+TOP_10_PRODUCTS = SUMX(TOPN(
+		10,
+		SUMMARIZE(
+			order_details,
+			order_details[ProductID],
+			"Total Revenue", SUM(order_details[Revenue])
+		),
+		[Total Revenue],
+		DESC
+	), [Total Revenue]
+	)
