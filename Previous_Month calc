@@ -1,0 +1,9 @@
+PreviousMonthSales = 
+CALCULATE(
+    [TotalSales],#REPLACE WITH CALC MEASURE
+    DATEADD(
+        'Date'[Date],#REPLACE WITH DATE COLUMN
+        -1,
+        MONTH
+    )
+)
