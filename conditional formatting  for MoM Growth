@@ -1,0 +1,2 @@
+if [MoM_Sales_Growth] >= Min([MoM_Sales_Growth]) AND < 0 THEN "RED"; REPLACE WITH PREFERRED COLOUR
+if [MoM_Sales_Growth] >= 0 AND <= Max([MoM_Sales_Growth]) THEN "GREEN";
