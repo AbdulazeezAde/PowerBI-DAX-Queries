@@ -1,0 +1,67 @@
+Region = 
+SWITCH(
+    TRUE(),
+    // South-East
+    'faac-sample'[beneficiaries] IN {
+        "Abia",
+        "Anambra",
+        "Ebonyi",
+        "Enugu",
+        "Imo"
+    }, "South East",
+
+    // South-West
+    'faac-sample'[beneficiaries] IN {
+        "Ekiti",
+        "Lagos",
+        "Ogun",
+        "Ondo",
+        "Osun",
+        "Oyo"
+    }, "South West",
+
+    // South-South
+    'faac-sample'[beneficiaries] IN {
+        "Akwa Ibom",
+        "Bayelsa",
+        "Cross River",
+        "Delta",
+        "Edo",
+        "Rivers"
+    }, "South South",
+
+    // North-East
+    'faac-sample'[beneficiaries] IN {
+        "Adamawa",
+        "Bauchi",
+        "Borno",
+        "Gombe",
+        "Taraba",
+        "Yobe"
+    }, "North East",
+
+    // North-West
+    'faac-sample'[beneficiaries] IN {
+        "Jigawa",
+        "Kaduna",
+        "Kano",
+        "Katsina",
+        "Kebbi",
+        "Sokoto",
+        "Zamfara"
+    }, "North West",
+
+    // North-Central
+    'faac-sample'[beneficiaries] IN {
+        "Benue",
+        "Kogi",
+        "Kwara",
+        "Nasarawa",
+        "Niger",
+        "Plateau",
+        "FCT"
+    }, "North Central",
+
+    // Fallback
+    "Unknown"
+)
