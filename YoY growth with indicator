@@ -1,0 +1,21 @@
+YoY VAllocation = 
+VAR PrevAlloc =
+    CALCULATE(
+        [Total VAT Allocation],
+        DATEADD( 'faac-sample'[date], -1, YEAR )
+    )
+VAR YoY =
+    DIVIDE(
+        [Total VAT Allocation] - PrevAlloc,
+        PrevAlloc,
+        0
+    )
+VAR Arrow =
+    IF( YoY >= 0,
+        UNICHAR(9650),   // ▲
+        UNICHAR(9660)    // ▼
+    )
+VAR PctText =
+    FORMAT( ABS(YoY), "0.00%" )
+RETURN
+    Arrow & " " & PctText
