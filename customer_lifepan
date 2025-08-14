@@ -1,0 +1,2 @@
+customer_lifepan = AVERAGEX(VALUES(Orders[Customer ID]),
+DATEDIFF(CALCULATE(MIN(Orders[Order Date].[Date]), FILTER(Orders, Orders[Customer ID] = EARLIER(Orders[Customer ID]))), CALCULATE(MAX(Orders[Order Date].[Date]), FILTER(Orders, Orders[Customer ID] = EARLIER(Orders[Customer ID]))), YEAR))
