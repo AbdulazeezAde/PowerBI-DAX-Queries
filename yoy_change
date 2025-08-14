@@ -1,0 +1,6 @@
+yoy_change = 
+VAR current_year = SUM(Orders[Sales])
+VAR prev_year = CALCULATE(SUM(Orders[Sales]), SAMEPERIODLASTYEAR(Orders[Order Date].[Date]))
+
+RETURN
+DIVIDE((current_year - prev_year), prev_year)
