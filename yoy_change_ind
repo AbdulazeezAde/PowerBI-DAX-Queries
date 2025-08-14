@@ -1,0 +1,6 @@
+yoy_change_ind = 
+VAR Arrow =
+IF([yoy_change]>=0, UNICHAR(9650), UNICHAR(9650))
+VAR pct = FORMAT(ABS([yoy_change]), "0.00%")
+RETURN
+Arrow & " " & pct
