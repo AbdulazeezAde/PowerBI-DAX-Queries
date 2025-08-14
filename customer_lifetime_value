@@ -1,0 +1,8 @@
+customer_lifetime_value = --avg purchase value * average purchase frequency * customer lifespan
+VAR avg_purchase_value = DIVIDE(SUM(Orders[Sales]), DISTINCTCOUNT(Orders[Order ID]))
+VAR avg_purchase_frequency = DIVIDE(DISTINCTCOUNT(Orders[Order ID]), DISTINCTCOUNT(Orders[Customer ID]))
+VAR customer_lifepan = AVERAGEX(VALUES(Orders[Customer ID]),
+DATEDIFF(CALCULATE(MIN(Orders[Order Date].[Date]), FILTER(Orders, Orders[Customer ID] = EARLIER(Orders[Customer ID]))), CALCULATE(MAX(Orders[Order Date].[Date]), FILTER(Orders, Orders[Customer ID] = EARLIER(Orders[Customer ID]))), YEAR))
+
+RETURN
+avg_purchase_value * avg_purchase_frequency * customer_lifepan
